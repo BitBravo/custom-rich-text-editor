@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Location List</title>
+    <script src="https://unpkg.com/contentful-ui-extensions-sdk@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+    <style>
+      .location-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
+        gap: 10px 30px;
+      }
+      .location-grid div {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="location-grid"></div>
+    <script>
+      let values = [];
+
+      window.contentfulExtension.init(function (sdk) {
+        values = sdk.field.getValue() || [];
+        console.log(values, sdk.field);
+
+        function getInitData() {
+          // var client = contentful.createClient({
+          //   space: 'q9zkntem569v',
+          //   accessToken: 'zMnUIiUXVRBc19lEPfxFYcnBKWxqPM8aLE-Ef--FfSw',
+          // });
+          console.log(sdk.space.getEntries);
+          sdk.space.getEntries({
+              content_type: 'templatePage',
+            })
+            .then(function (entries) {
+              let list = entries?.items.map(({ fields }) => {
+                return fields.slug['en-US']
+              });
+
+              console.log(list);
+
+
+              list.map(function (item) {
+                var checkContainer = document.createElement('div');
+                if (values.includes(item)) {
+                  checkContainer.innerHTML = `<input type="checkbox" name=${item} checked="true" /> ${item}`;
+                } else {
+                  checkContainer.innerHTML = `<input type="checkbox" name=${item} /> ${item}`;
+                }
+                document.querySelector('.location-grid').append(checkContainer);
+              });
+
+              sdk.window.startAutoResizer();
+            });
+        }
+
+        function updateData() {
+          let selected = [];
+          document.querySelectorAll('.location-grid input[checked="true"]').forEach((item) => {
+            selected = [...selected, item.name];
+          });
+
+          sdk.field.setValue(selected);
+        }
+
+        window.addEventListener(
+          'click',
+          (e) => {
+            if (e.target.tagName !== 'INPUT') return;
+            const checked = e.target.getAttribute('checked');
+            e.target.setAttribute('checked', checked ? false : true);
+            setTimeout(() => {
+              updateData();
+            }, 1000);
+          },
+          true
+        );
+
+        getInitData();
+      });
+    </script>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="https://jsdev63.github.io/custom-rich-text-editor/src.f69400ca.css"></head><body> <div id="root"></div> <script type="text/javascript" src="https://jsdev63.github.io/custom-rich-text-editor/src.f69400ca.js"></script> </body></html> -->
