@@ -78,11 +78,11 @@ const styles = {
   }),
   heading1: css({
     ...headingCss,
-    fontSize: '1.875rem'
+    fontSize: '1.675rem'
   }),
   heading2: css({
     ...headingCss,
-    fontSize: '1.5625rem'
+    fontSize: '1.5rem'
   }),
   heading3: css({
     ...headingCss,
@@ -94,11 +94,11 @@ const styles = {
   }),
   heading5: css({
     ...headingCss,
-    fontSize: '1.075rem'
+    fontSize: '1rem'
   }),
   heading6: css({
     ...headingCss,
-    fontSize: '1rem'
+    fontSize: '0.875rem'
   })
 };
 
