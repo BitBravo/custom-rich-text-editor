@@ -5,15 +5,15 @@ import camelCase from 'lodash/camelCase';
 import tokens from '@contentful/forma-36-tokens';
 
 const headingCss = {
-  fontWeight: tokens.fontWeightMedium,
-  lineHeight: '1.3',
-  margin: `0 0 ${tokens.spacingS}`
+  lineHeight: tokens.lineHeightDefault,
+  margin: '0.5em'
 };
 
 const styles = {
   paragraph: css({
     lineHeight: tokens.lineHeightDefault,
-    marginBottom: '0.5em'
+    marginBottom: '0.5em',
+    fontSize: '1.25rem'
   }),
   bold: css({
     color: 'inherit',
@@ -89,11 +89,11 @@ const styles = {
   }),
   heading4: css({
     ...headingCss,
-    fontSize: '1.25rem'
+    fontSize: '1.125rem'
   }),
   heading5: css({
     ...headingCss,
-    fontSize: '1.125rem'
+    fontSize: '1.075rem'
   }),
   heading6: css({
     ...headingCss,

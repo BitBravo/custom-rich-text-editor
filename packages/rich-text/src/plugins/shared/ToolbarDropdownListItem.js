@@ -8,7 +8,8 @@ const styles = {
   root: css({
     button: {
       span: {
-        fontWeight: tokens.fontWeightDemiBold
+        fontWeight: tokens.fontWeightDemiBold,
+        fontSize: '1.25rem'
       }
     }
   }),
@@ -22,14 +23,14 @@ const styles = {
   h2: css({
     button: {
       span: {
-        fontSize: '1.4375rem'
+        fontSize: '1.5rem'
       }
     }
   }),
   h3: css({
     button: {
       span: {
-        fontSize: '1.25rem'
+        fontSize: '1.375rem'
       }
     }
   }),
