@@ -6,7 +6,7 @@ import tokens from '@contentful/forma-36-tokens';
 
 const headingCss = {
   lineHeight: tokens.lineHeightDefault,
-  margin: '0.5em',
+  marginBottom: '0.5em',
   fontWeight: tokens.fontWeightNormal
 };
 
