@@ -6,14 +6,14 @@ import tokens from '@contentful/forma-36-tokens';
 
 const headingCss = {
   lineHeight: tokens.lineHeightDefault,
-  margin: '0 0 0.5em 0',
+  margin: '0 0 0.3em 0',
   fontWeight: tokens.fontWeightNormal
 };
 
 const styles = {
   paragraph: css({
     lineHeight: tokens.lineHeightDefault,
-    marginBottom: '0.5em',
+    marginBottom: '0.3em',
     fontSize: '1.25rem'
   }),
   bold: css({
