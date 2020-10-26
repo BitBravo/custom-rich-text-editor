@@ -25,12 +25,12 @@ const styles = {
 
 export const blockTitles = {
   [BLOCKS.PARAGRAPH]: 'Normal (24)',
-  [BLOCKS.HEADING_1]: 'Big Extra (48)',
-  [BLOCKS.HEADING_2]: 'Extra (36)',
-  [BLOCKS.HEADING_3]: 'Large (24)',
-  [BLOCKS.HEADING_4]: 'Medium (20)',
-  [BLOCKS.HEADING_5]: 'Small (16)',
-  [BLOCKS.HEADING_6]: 'Heading 6',
+  [BLOCKS.HEADING_1]: 'Extra Large (48)',
+  [BLOCKS.HEADING_2]: 'Extra Large(36)',
+  [BLOCKS.HEADING_3]: 'Extra Large(32)',
+  [BLOCKS.HEADING_4]: 'Large(20)',
+  [BLOCKS.HEADING_5]: 'Medium (16)',
+  [BLOCKS.HEADING_6]: 'Small (14)',
   [BLOCKS.EMBEDDED_ENTRY]: 'Embedded Entry',
   [BLOCKS.EMBEDDED_ASSET]: 'Embedded Asset'
 };

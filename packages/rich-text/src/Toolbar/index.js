@@ -14,6 +14,8 @@ import {
   Heading3,
   Heading4,
   Heading5,
+  Heading6,
+  HeadingPARAGRAPH,
   Paragraph,
   HeadingDropdown,
 } from '../plugins/Heading';
@@ -119,16 +121,16 @@ export default class Toolbar extends React.Component {
             )}
           </EntryEmbedDropdown>
         ) : (
-          <React.Fragment>
-            {blockEntryEmbedEnabled && (
-              <EmbeddedEntityBlock nodeType={BLOCKS.EMBEDDED_ENTRY} isButton {...props} />
-            )}
-            {inlineEntryEmbedEnabled && <EmbeddedEntryInline isButton {...props} />}
-            {blockAssetEmbedEnabled && (
-              <EmbeddedEntityBlock nodeType={BLOCKS.EMBEDDED_ASSET} isButton {...props} />
-            )}
-          </React.Fragment>
-        )}
+            <React.Fragment>
+              {blockEntryEmbedEnabled && (
+                <EmbeddedEntityBlock nodeType={BLOCKS.EMBEDDED_ENTRY} isButton {...props} />
+              )}
+              {inlineEntryEmbedEnabled && <EmbeddedEntryInline isButton {...props} />}
+              {blockAssetEmbedEnabled && (
+                <EmbeddedEntityBlock nodeType={BLOCKS.EMBEDDED_ASSET} isButton {...props} />
+              )}
+            </React.Fragment>
+          )}
       </div>
     );
   };
@@ -163,6 +165,7 @@ export default class Toolbar extends React.Component {
     const { field } = richTextAPI.sdk;
     const { isAnyHyperlinkEnabled, isAnyListEnabled, isAnyMarkEnabled } = this.state;
     const currentBlockType = props.editor.value.blocks.getIn([0, 'type']);
+
     return (
       <EditorToolbar data-test-id="toolbar">
         <div className={styles.formattingOptionsWrapper}>
@@ -177,8 +180,10 @@ export default class Toolbar extends React.Component {
             {isNodeTypeEnabled(field, BLOCKS.HEADING_1) && <Heading1 {...props} />}
             {isNodeTypeEnabled(field, BLOCKS.HEADING_2) && <Heading2 {...props} />}
             {isNodeTypeEnabled(field, BLOCKS.HEADING_3) && <Heading3 {...props} />}
+            {<HeadingPARAGRAPH {...props} />}
             {isNodeTypeEnabled(field, BLOCKS.HEADING_4) && <Heading4 {...props} />}
             {isNodeTypeEnabled(field, BLOCKS.HEADING_5) && <Heading5 {...props} />}
+            {isNodeTypeEnabled(field, BLOCKS.HEADING_6) && <Heading6 {...props} />}
           </HeadingDropdown>
           {isAnyMarkEnabled && <EditorToolbarDivider testId="mark-divider" />}
           {isMarkEnabled(field, MARKS.BOLD) && <Bold {...props} />}

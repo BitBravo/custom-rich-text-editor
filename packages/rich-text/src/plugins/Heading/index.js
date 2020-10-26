@@ -47,6 +47,7 @@ export const Heading6Plugin = newPlugin(BLOCKS.HEADING_6, 'h6', ['mod+opt+6']);
 export const Heading1 = newHeadingDropdownItem(BLOCKS.HEADING_1);
 export const Heading2 = newHeadingDropdownItem(BLOCKS.HEADING_2);
 export const Heading3 = newHeadingDropdownItem(BLOCKS.HEADING_3);
+export const HeadingPARAGRAPH = newHeadingDropdownItem(BLOCKS.PARAGRAPH);
 export const Heading4 = newHeadingDropdownItem(BLOCKS.HEADING_4);
 export const Heading5 = newHeadingDropdownItem(BLOCKS.HEADING_5);
 export const Heading6 = newHeadingDropdownItem(BLOCKS.HEADING_6);
