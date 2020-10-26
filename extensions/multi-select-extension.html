@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Location List</title>
     <script src="https://unpkg.com/contentful-ui-extensions-sdk@3"></script>
-    <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
     <style>
       .location-grid {
         display: grid;
@@ -24,24 +23,15 @@
 
       window.contentfulExtension.init(function (sdk) {
         values = sdk.field.getValue() || [];
-        console.log(values, sdk.field);
 
         function getInitData() {
-          // var client = contentful.createClient({
-          //   space: 'q9zkntem569v',
-          //   accessToken: 'zMnUIiUXVRBc19lEPfxFYcnBKWxqPM8aLE-Ef--FfSw',
-          // });
-          console.log(sdk.space.getEntries);
           sdk.space.getEntries({
               content_type: 'templatePage',
             })
             .then(function (entries) {
               let list = entries?.items.map(({ fields }) => {
-                return fields.slug['en-US']
+                return fields.slug['en-US'];
               });
-
-              console.log(list);
-
 
               list.map(function (item) {
                 var checkContainer = document.createElement('div');
