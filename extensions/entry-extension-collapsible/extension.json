@@ -1,0 +1,5 @@
+{
+  "id": "entry-extension-collapsible",
+  "name": "Entry extension with collapsible groups",
+  "srcdoc": "./build/index.html"
+}

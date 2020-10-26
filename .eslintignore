@@ -1,0 +1,8 @@
+node_modules/
+.docz/
+.coverage/
+.cache/
+dist/
+build/
+cypress/plugins/
+cypress/support/

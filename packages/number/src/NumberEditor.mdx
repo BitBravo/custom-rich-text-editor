@@ -1,0 +1,31 @@
+---
+name: Number
+route: /number
+menu: Editors
+---
+
+import Readme from '../README.md';
+
+<Readme />
+
+import { Playground, Props } from 'docz';
+import { NumberEditor } from './NumberEditor.tsx';
+import { createFakeFieldAPI, ActionsPlayground } from '@contentful/field-editor-test-utils';
+
+## In Action
+
+<Playground>
+  {() => {
+    const [field, mitt] = createFakeFieldAPI();
+    return (
+      <div>
+        <NumberEditor field={field} isInitiallyDisabled={false} />
+        <ActionsPlayground mitt={mitt} />
+      </div>
+    );
+  }}
+</Playground>
+
+## Props
+
+<Props of={NumberEditor} />

@@ -1,0 +1,55 @@
+---
+name: Rating
+route: /rating
+menu: Editors
+---
+
+import Readme from '../README.md';
+
+<Readme />
+
+import { Playground, Props } from 'docz';
+import { RatingEditor } from './RatingEditor.tsx';
+import { createFakeFieldAPI, ActionsPlayground } from '@contentful/field-editor-test-utils';
+
+## In Action
+
+<Playground>
+  {() => {
+    const [field, mitt] = createFakeFieldAPI();
+    return (
+      <div>
+        <RatingEditor field={field} isInitiallyDisabled={false} />
+        <ActionsPlayground mitt={mitt} />
+      </div>
+    );
+  }}
+</Playground>
+
+## Disabled
+
+<Playground>
+  {() => {
+    const [field] = createFakeFieldAPI();
+    return <RatingEditor field={field} isInitiallyDisabled />;
+  }}
+</Playground>
+
+## More stars
+
+<Playground>
+  {() => {
+    const [field] = createFakeFieldAPI();
+    return (
+      <RatingEditor
+        field={field}
+        isInitiallyDisabled={false}
+        parameters={{ instance: { stars: 20 } }}
+      />
+    );
+  }}
+</Playground>
+
+## Props
+
+<Props of={RatingEditor} />

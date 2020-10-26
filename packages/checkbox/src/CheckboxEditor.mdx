@@ -1,0 +1,49 @@
+---
+name: Checkbox
+route: /checkbox
+menu: Editors
+---
+
+import Readme from '../README.md';
+
+<Readme />
+
+import { Playground, Props } from 'docz';
+import { CheckboxEditor } from './CheckboxEditor.tsx';
+import {
+  createFakeFieldAPI,
+  createFakeLocalesAPI,
+  ActionsPlayground
+} from '@contentful/field-editor-test-utils';
+
+## In Action
+
+### with proper configuration
+
+<Playground>
+  {() => {
+    const [field, mitt] = createFakeFieldAPI(
+      mock => ({
+        ...mock,
+        items: {
+          validations: [{ in: ['test1', 'test2', 'test3', 'test4'] }]
+        }
+      }),
+      ['test1', 'test2', 'test3']
+    );
+    return (
+      <div>
+        <CheckboxEditor
+          field={field}
+          locales={createFakeLocalesAPI()}
+          isInitiallyDisabled={false}
+        />
+        <ActionsPlayground mitt={mitt} />
+      </div>
+    );
+  }}
+</Playground>
+
+## Props
+
+<Props of={CheckboxEditor} />
