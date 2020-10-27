@@ -92,3 +92,7 @@ All field editor packages are open source software [licensed as MIT](./LICENSE).
 [lerna]: https://github.com/lerna/lerna
 [prettier]: https://prettier.io/
 [eslint]: https://eslint.org/
+
+## Custom Rich Text Editor
+
+![How to work](./rich-editor.gif)
