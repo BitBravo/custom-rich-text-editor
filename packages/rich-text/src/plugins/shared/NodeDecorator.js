@@ -14,7 +14,7 @@ const styles = {
   paragraph: css({
     lineHeight: tokens.lineHeightDefault,
     marginBottom: '0.3em',
-    fontSize: '1.25rem'
+    fontSize: '1.4rem'
   }),
   bold: css({
     color: 'inherit',
@@ -78,19 +78,19 @@ const styles = {
   }),
   heading1: css({
     ...headingCss,
-    fontSize: '1.675rem'
+    fontSize: '2rem'
   }),
   heading2: css({
     ...headingCss,
-    fontSize: '1.5rem'
+    fontSize: '1.8rem'
   }),
   heading3: css({
     ...headingCss,
-    fontSize: '1.375rem'
+    fontSize: '1.6rem'
   }),
   heading4: css({
     ...headingCss,
-    fontSize: '1.125rem'
+    fontSize: '1.2rem'
   }),
   heading5: css({
     ...headingCss,
@@ -98,7 +98,7 @@ const styles = {
   }),
   heading6: css({
     ...headingCss,
-    fontSize: '0.875rem'
+    fontSize: '0.8rem'
   })
 };
 
