@@ -1,5 +1,8 @@
 # @contentful/field-editors
 
+![How to work](./rich-editor.gif)
+
+
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 
 This is the monorepo for all field editors and extensions by [Contentful][contentful].
@@ -93,6 +96,3 @@ All field editor packages are open source software [licensed as MIT](./LICENSE).
 [prettier]: https://prettier.io/
 [eslint]: https://eslint.org/
 
-## Custom Rich Text Editor
-
-![How to work](./rich-editor.gif)
